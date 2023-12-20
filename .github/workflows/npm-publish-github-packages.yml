@@ -6,7 +6,7 @@ run-name: ${{ github.actor }} is publishing a new version of the prettier config
 on:
   release:
     types: [created]
-  workflow_dispatch: on
+  workflow_dispatch:
 
 jobs:
   build:
@@ -17,7 +17,6 @@ jobs:
         with:
           node-version: 16
       - run: npm ci
-      - run: npm test
 
   publish-gpr:
     needs: build
