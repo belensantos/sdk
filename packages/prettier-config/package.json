@@ -1,10 +1,7 @@
 {
-    "name": "@belensantos-sdk/prettier-config",
+    "name": "@belensantos/prettier-config",
     "version": "1.0.0",
     "repository": "https://github.com/belensantos/sdk.git",
-    "publishConfig": {
-        "registry": "https://npm.pkg.github.com"
-    },
     "peerDependencies": {
         "prettier": "3.1.1"
     },

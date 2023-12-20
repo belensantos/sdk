@@ -1,10 +1,7 @@
 {
-    "name": "@belensantos-sdk/eslint-config",
+    "name": "@belensantos/eslint-config",
     "version": "1.0.0",
     "repository": "https://github.com/belensantos/sdk.git",
-    "publishConfig": {
-        "registry": "https://npm.pkg.github.com"
-    },
     "peerDependencies": {
         "@typescript-eslint/eslint-plugin": "^6.15.0",
         "eslint": "^8.56.0",
