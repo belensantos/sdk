@@ -1,0 +1,1 @@
+module.exports = { extends: '@belensantos-sdk/eslint-config' }

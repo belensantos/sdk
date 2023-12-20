@@ -1,3 +1,1 @@
-module.exports = {
-  ...require('@belensantos-sdk/prettier-config'),
-}
+module.exports = { ...require('@belensantos-sdk/prettier-config') }
