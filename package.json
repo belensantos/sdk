@@ -1,1 +1,19 @@
-{    "workspaces": [        "./packages/**/*"    ],    "scripts": {        "build:format": "prettier . --write",        "build:lint": "eslint ./packages/**/* --fix",        "build": "npm run build:format && npm run build:lint"    },    "devDependencies": {        "@belensantos-sdk/eslint-config": "1.0.0",        "@belensantos-sdk/prettier-config": "1.0.0",        "@typescript-eslint/eslint-plugin": "^6.15.0",        "eslint": "^8.56.0",        "eslint-config-prettier": "^9.1.0",        "eslint-plugin-react": "^7.33.2",        "prettier": "3.1.1"    }}
+{
+    "workspaces": [
+        "./packages/**/*"
+    ],
+    "scripts": {
+        "ci:format": "prettier . --write",
+        "ci:lint": "eslint ./packages/**/* --fix",
+        "ci": "npm run ci:format && npm run ci:lint"
+    },
+    "devDependencies": {
+        "@belensantos-sdk/eslint-config": "1.0.0",
+        "@belensantos-sdk/prettier-config": "1.0.0",
+        "@typescript-eslint/eslint-plugin": "^6.15.0",
+        "eslint": "^8.56.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-react": "^7.33.2",
+        "prettier": "3.1.1"
+    }
+}
