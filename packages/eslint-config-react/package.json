@@ -1,0 +1,10 @@
+{
+    "name": "@belensantos/eslint-config-react",
+    "version": "1.0.0",
+    "repository": "https://github.com/belensantos/sdk.git",
+    "peerDependencies": {
+        "@belensantos/eslint-config-preferred": "1.0.0",
+        "eslint-plugin-react": "^7.33.2"
+    },
+    "main": "index.js"
+}

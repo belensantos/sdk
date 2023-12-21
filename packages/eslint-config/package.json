@@ -1,15 +1,11 @@
 {
-    "name": "@belensantos/eslint-config",
+    "name": "@belensantos/eslint-config-preferred",
     "version": "1.0.0",
     "repository": "https://github.com/belensantos/sdk.git",
     "peerDependencies": {
         "@typescript-eslint/eslint-plugin": "^6.15.0",
         "eslint": "^8.56.0",
-        "eslint-config-prettier": "^9.1.0",
-        "eslint-plugin-react": "^7.33.2"
-    },
-    "devDependencies": {
-        "@types/eslint": "^8.56.0"
+        "eslint-config-prettier": "^9.1.0"
     },
     "main": "index.js"
 }

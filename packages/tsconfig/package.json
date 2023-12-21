@@ -1,0 +1,9 @@
+{
+    "name": "@belensantos/tsconfig",
+    "version": "1.0.0",
+    "repository": "https://github.com/belensantos/sdk.git",
+    "peerDependencies": {
+        "typescript": "^5"
+    },
+    "main": "index.json"
+}

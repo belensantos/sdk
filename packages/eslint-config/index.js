@@ -1,1 +1,20 @@
-module.exports = {    env: {        es2024: true,        node: true,    },    extends: [        'eslint:recommended',        'plugin:react/recommended',        'plugin:@typescript-eslint/recommended',        'prettier',    ],    parser: '@typescript-eslint/parser',    parserOptions: {        ecmaFeatures: {            jsx: true,        },        ecmaVersion: 'latest',        sourceType: 'module',    },    plugins: ['react', '@typescript-eslint'],    settings: {        react: {            createClass: 'createReactClass',            pragma: 'React',            fragment: 'Fragment',            version: 'detect',            flowVersion: '0.53',        },        propWrapperFunctions: [            'forbidExtraProps',            { property: 'freeze', object: 'Object' },            { property: 'myFavoriteWrapper' },            { property: 'forbidExtraProps', exact: true },        ],        componentWrapperFunctions: [            'observer',            { property: 'styled' },            { property: 'observer', object: 'Mobx' },            { property: 'observer', object: '<pragma>' },        ],        formComponents: [            'CustomForm',            { name: 'Form', formAttribute: 'endpoint' },        ],        linkComponents: ['Hyperlink', { name: 'Link', linkAttribute: 'to' }],    },}
+module.exports = {
+    env: {
+        es2024: true,
+        node: true,
+    },
+    extends: [
+        'eslint:recommended',
+        'plugin:@typescript-eslint/recommended',
+        'prettier',
+    ],
+    parser: '@typescript-eslint/parser',
+    parserOptions: {
+        ecmaFeatures: {
+            jsx: true,
+        },
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+    },
+    plugins: ['@typescript-eslint'],
+}
