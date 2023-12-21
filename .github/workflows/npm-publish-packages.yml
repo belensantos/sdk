@@ -31,9 +31,15 @@ jobs:
           node-version: 16
           registry-url: https://npm.pkg.github.com/
       - run: npm ci
+      - run: npm publish -w @belensantos/eslint-config-preferred
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - run: npm publish -w @belensantos/eslint-config-react
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - run: npm publish -w @belensantos/prettier-config
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      - run: npm publish -w @belensantos/eslint-config
+      - run: npm publish -w @belensantos/tsconfig
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
