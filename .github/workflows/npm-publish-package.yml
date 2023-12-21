@@ -1,9 +1,9 @@
 name: Publish package
-run-name: ${{ github.actor }} is publishing a new version of ${{ inputs.username }}.
+run-name: ${{ github.actor }} is publishing a new version of ${{ inputs.package }}.
 on:
   workflow_dispatch:
       inputs:
-      name:
+      package:
         type: choice
         description: whick package?
         required: true
@@ -14,16 +14,16 @@ on:
         - "@belensantos/tsconfig"
         
 jobs:
-  build:
+  prepare:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: npm ci
+      - run: npm ci -w ${{ inputs.package }}
 
-  publish-gpr:
+  publish:
     needs: build
     runs-on: ubuntu-latest
     permissions:
@@ -35,8 +35,6 @@ jobs:
         with:
           node-version: 16
           registry-url: https://npm.pkg.github.com/
-      - run: npm ci -w ${{ inputs.username }}
-      - run: npm publish -w ${{ inputs.username }}
+      - run: npm publish -w ${{ inputs.package }}
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      - run: npm publish -w ${{ inputs.username }}
