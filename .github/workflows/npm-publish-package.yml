@@ -8,10 +8,10 @@ on:
         description: whick package?
         required: true
         options: 
-        - @belensantos/eslint-config-preferred
-        - @belensantos/eslint-config-react
-        - @belensantos/prettier-config
-        - @belensantos/tsconfig
+        - "@belensantos/eslint-config-preferred"
+        - "@belensantos/eslint-config-react"
+        - "@belensantos/prettier-config"
+        - "@belensantos/tsconfig"
         
 jobs:
   build:
