@@ -1,6 +1,6 @@
 name: Publish package
 run-name:
-    ${{ inputs.force && 'Republishing' }}${{ !inputs.force && 'Publishing a new version of'}} ${{ inputs.package }} by ${{ github.actor }} .
+    ${{ inputs.force && 'Republishing' }}${{ !(inputs.force) && 'Publishing a new version of'}} ${{ inputs.package }} by ${{ github.actor }} .
 on:
   workflow_dispatch:
       inputs:
@@ -28,11 +28,10 @@ jobs:
             - uses: actions/setup-node@v3
               with:
                   node-version: 16
-            - run: npm ci -w ${{ inputs.package }}
-
+            - run: npm ci -w ${{ inputs.package }}å
     unpublish:
         needs: prepare
-        if: {{inputs.force}}
+        if: ${{inputs.force}}
         runs-on: ubuntu-latest
         concurrency:
             group: preparation
