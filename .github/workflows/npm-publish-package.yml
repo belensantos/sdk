@@ -1,40 +1,41 @@
 name: Publish package
-run-name: ${{ github.actor }} is publishing a new version of ${{ inputs.package }}.
+run-name:
+    ${{ github.actor }} is publishing a new version of ${{ inputs.package }}.
 on:
-  workflow_run:
+  workflow_dispatch:
       inputs:
-      package:
-        type: choice
-        description: whick package?
-        required: true
-        options: 
-        - "@belensantos/eslint-config-preferred"
-        - "@belensantos/eslint-config-react"
-        - "@belensantos/prettier-config"
-        - "@belensantos/tsconfig"
-        
-jobs:
-  prepare:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - run: npm ci -w ${{ inputs.package }}
+          package:
+              type: choice
+              description: whick package?
+              required: true
+              options:
+                  - '@belensantos/eslint-config-preferred'
+                  - '@belensantos/eslint-config-react'
+                  - '@belensantos/prettier-config'
+                  - '@belensantos/tsconfig'
 
-  publish:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          registry-url: https://npm.pkg.github.com/
-      - run: npm publish -w ${{ inputs.package }}
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+jobs:
+    prepare:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: 16
+            - run: npm ci -w ${{ inputs.package }}
+
+    publish:
+        needs: build
+        runs-on: ubuntu-latest
+        permissions:
+            contents: read
+            packages: write
+        steps:
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: 16
+                  registry-url: https://npm.pkg.github.com/
+            - run: npm publish -w ${{ inputs.package }}
+              env:
+                  NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
